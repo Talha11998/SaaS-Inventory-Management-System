@@ -7,7 +7,7 @@ export const useAuth = () => useContext(AuthContext);
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(!!getToken());
-
+  console.log("User");
   const logout = useCallback(() => {
     console.log('LOGOUT CALLED');
     setToken(null);
