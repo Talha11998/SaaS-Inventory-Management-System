@@ -3,8 +3,8 @@ StockFlow – Inventory Management System
 StockFlow is a web-based inventory management application that helps users manage products, monitor stock levels, and view inventory statistics. The application uses a React frontend and a Node.js backend with a MySQL database.
 
 Features
-> User registration and login  >JWT-based authentication >Product creation, editing, viewing, and deletion >Inventory quantity tracking
->Low-stock monitoring >Dashboard with inventory statistics >Organization-based product management >Settings management >Technologies Used
+> User registration and login  >JWT-based authentication   >Product creation, editing, viewing, and deletion   >Inventory quantity tracking
+>Low-stock monitoring   >Dashboard with inventory statistic  s >Organization-based product management   >Settings management   >Technologies Used
 
 Frontend
 >React >React Router >JavaScript >HTML and CSS >Vite
@@ -71,39 +71,22 @@ API Overview
 
 Example endpoints, depending on the routes configured in the backend:
 
-Method	Endpoint	Purpose
-POST	/api/auth/signup	Register a user
-POST	/api/auth/login	Log in
-GET	/api/dashboard	Retrieve dashboard statistics
-GET	/api/products	List products
-POST	/api/products	Create a product
-PUT	/api/products/:id	Update a product
-DELETE	/api/products/:id	Delete a product
+>Method	Endpoint	Purpose   >POST	/api/auth/signup	Register a user   >POST	/api/auth/login	Log in   >GET	/api/dashboard	Retrieve dashboard statistics   >GET	/api/products	List products    >POST	/api/products	Create a product   >PUT	/api/products/:id	Update a product    >DELETE	/api/products/:id	Delete a product
 
 Protected endpoints require a valid authentication token, typically sent using the Authorization: Bearer <token> header.
 
 Verify the exact endpoint paths and methods against your Express route definitions.
 
-Usage
-Register an account or log in.
-View inventory statistics on the dashboard.
-Add products and enter their stock information.
-Edit product details or delete products when needed.
-Monitor low-stock items.
-Update organization settings where available.
-Security
-Store secrets and database credentials in environment variables.
-Do not commit .env files containing real credentials.
-Protect private API routes with authentication middleware.
-Validate user input on the backend.
-Ensure users can access only the products and data belonging to their organization.
-Future Improvements
-Inventory transaction history
-Stock movement reports
-Product search and filtering
-Export reports to CSV or PDF
-Role-based access control
-Automated testing
+>Usage
+>Register an account or log in.     >View inventory statistics on the dashboard.     >Add products and enter their stock information.   >Edit product details or delete products when needed.    >Monitor low-stock items.    >Update organization settings where available.
+
+
+>>Security  >Store secrets and database credentials in environment variables.  >Do not commit .env files containing real credentials.  >Protect private API routes with authentication middleware.  >Validate user input on the backend.  >Ensure users can access only the products and data belonging to their organization.
+
+>>Future Improvements  >Inventory transaction history  >Stock movement reports  >Product search and filtering  >Export reports to CSV or PDF  >Role-based access control.   >Automated testing
+
+
+
 License
 
 Specify the license for this project if you intend to distribute or publish it.
