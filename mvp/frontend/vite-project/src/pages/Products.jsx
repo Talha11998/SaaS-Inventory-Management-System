@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../api';
-import { Errors, Flash } from '../components';
+import { Errors, Flash } from '../Components';
 
 function AdjustControl({ product, onAdjust }) {
   const [delta, setDelta] = useState('');

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { api } from '../api';
-import { Errors, Field } from '../components';
+import { Errors, Field } from '../Components';
 
 const EMPTY = { name: '', sku: '', description: '', quantity: '0', lowStockThreshold: '', costPrice: '', sellingPrice: '' };
 const str = (v) => (v === null || v === undefined ? '' : String(v));

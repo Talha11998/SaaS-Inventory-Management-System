@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { api } from '../api';
-import { Errors, Flash } from '../components';
+import { Errors, Flash } from '../Components';
 
 export default function Settings() {
   const [value, setValue] = useState(null);

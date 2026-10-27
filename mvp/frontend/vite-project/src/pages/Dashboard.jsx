@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../api';
-import { Errors } from '../components';
+import { Errors } from '../Components';
 
 export default function Dashboard() {
   const [data, setData] = useState(null);
