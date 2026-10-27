@@ -125,7 +125,7 @@ async function request(method, path, body) {
   let res;
 
   try {
-    res = await fetch(`/api${path}`, {
+    res = await fetch(`${import.meta.env.VITE_API_URL}/api${path}`, {
       method,
       headers,
       body: body != null ? JSON.stringify(body) : undefined,
