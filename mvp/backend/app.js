@@ -1,5 +1,6 @@
 const express=require('express');
 const app=express();
+const cors=require('cors');
 app.use(cors({
   origin: "https://saa-s-inventory-management-system-t.vercel.app",
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
@@ -49,9 +50,11 @@ Organization.hasMany(User, {
 });
 console.log('Associations:', Object.keys(User.associations));
 
-sequelize.sync({alter:true}).then(()=>{
+sequelize.sync().then(()=>{
 app.listen(PORT,()=>{
     console.log(`Server is running on PORT ${PORT}`);
 })
 })
 .catch((err)=>console.log(err));
+
+module.exports=app;
