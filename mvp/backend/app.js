@@ -1,13 +1,5 @@
 const express=require('express');
 const app=express();
-require("dotenv").config();
-app.use(express.json());
-
-const sequelize=require('./config/database');
-
-
-const cors = require("cors");
-
 app.use(cors({
   origin: "https://saa-s-inventory-management-system-t.vercel.app",
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
@@ -15,6 +7,14 @@ app.use(cors({
 }));
 
 app.use(express.json());
+require("dotenv").config();
+
+const sequelize=require('./config/database');
+
+
+const cors = require("cors");
+
+
 
 // Register your routes AFTER CORS
 // Example:
