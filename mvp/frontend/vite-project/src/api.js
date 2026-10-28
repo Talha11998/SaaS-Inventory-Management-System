@@ -124,16 +124,28 @@ async function request(method, path, body) {
 
   let res;
 
+  // try {
+  //   res = await fetch(`${import.meta.env.VITE_API_URL}/api${path}`, {
+  //     method,
+  //     headers,
+  //     body: body != null ? JSON.stringify(body) : undefined,
+  //   });
+  // } catch (error) {
+  //   console.error('[API] Network error:', error);
+  //   throw new ApiError(['Cannot reach the server. Is it running?'], 0);
+  // }
   try {
-    res = await fetch(`${import.meta.env.VITE_API_URL}/api${path}`, {
-      method,
-      headers,
-      body: body != null ? JSON.stringify(body) : undefined,
-    });
-  } catch (error) {
-    console.error('[API] Network error:', error);
-    throw new ApiError(['Cannot reach the server. Is it running?'], 0);
-  }
+  const baseURL = import.meta.env.VITE_API_URL;
+
+  res = await fetch(`${baseURL}/api${path}`, {
+    method,
+    headers,
+    body: body != null ? JSON.stringify(body) : undefined,
+  });
+} catch (error) {
+  console.error("[API] Network error:", error);
+  throw new ApiError(["Cannot reach the server. Is it running?"], 0);
+}
 
   const data = await res.json().catch(() => ({}));
 
