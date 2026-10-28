@@ -136,7 +136,9 @@ async function request(method, path, body) {
   // }
   try {
   const baseURL = import.meta.env.VITE_API_URL;
-
+  console.log("VITE_API_URL =", import.meta.env.VITE_API_URL);
+console.log("path =", path);
+console.log("Final URL =", url);
   res = await fetch(`${baseURL}/api${path}`, {
     method,
     headers,
