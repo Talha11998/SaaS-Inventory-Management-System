@@ -5,6 +5,22 @@ app.use(express.json());
 
 const sequelize=require('./config/database');
 
+
+const cors = require("cors");
+
+app.use(cors({
+  origin: "https://saa-s-inventory-management-system-t.vercel.app",
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
+
+app.use(express.json());
+
+// Register your routes AFTER CORS
+// Example:
+// app.use("/api/auth", authRoutes);
+
+
 const userRoutes=require('./routes/userRoutes');
 const productRoutes=require('./routes/productRoutes');
 const dashboardRoutes=require('./routes/dashboardRoutes');
@@ -14,7 +30,7 @@ const settingsRoutes=require('./routes/settingsRoutes');
 app.use('/api',userRoutes);
 app.use('/api',productRoutes);
 app.use('/api',dashboardRoutes);
-app.use('/e3api',settingsRoutes);
+app.use('/api',settingsRoutes);
 
 const PORT=process.env.PORT || 3000;
 
